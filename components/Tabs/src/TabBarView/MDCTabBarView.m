@@ -1132,7 +1132,8 @@ static NSString *const kLargeContentSizeImageInsets = @"largeContentSizeImageIns
     return;
   }
 
-  if ([self effectiveLayoutStyle] == MDCTabBarViewLayoutStyleScrollableCentered) {
+  if ([self effectiveLayoutStyle] == MDCTabBarViewLayoutStyleScrollable
+      || [self effectiveLayoutStyle] == MDCTabBarViewLayoutStyleScrollableCentered) {
     CGPoint contentOffset = [self contentOffsetNeededToCenterItemView:self.itemViews[index]];
     void (^animationBlock)(void) = ^{
       self.contentOffset = contentOffset;
